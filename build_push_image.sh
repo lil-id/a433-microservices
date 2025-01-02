@@ -23,12 +23,9 @@ docker build -t item-app:v1 .
 docker images
 
 # 3. Mengubah nama (tag) image agar sesuai dengan format GitHub Container Registry
-# Ganti `USERNAME` dengan nama pengguna GitHub Anda
-# Ganti `REPOSITORY` dengan nama repository Anda di GitHub
 docker tag item-app:v1 ghcr.io/lil-id/item-app/item-app:v1
 
 # 4. Login ke GitHub Container Registry
-# Akan diminta token GitHub Personal Access Token dengan scope "write:packages"
 echo $GITHUB_TOKEN | docker login ghcr.io -u lil-id --password-stdin
 
 # 5. Mengunggah image ke GitHub Container Registry
